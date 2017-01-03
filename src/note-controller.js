@@ -12,14 +12,14 @@
 
     _createHTMLWithNotes: function() {
       var noteListView = new NoteListView(this._noteList);
-      return noteListView.convertNotesToHTML()
+      return noteListView.convertNotesToHTML();
     },
 
     insertHTMLNotes: function() {
       document.getElementById("app")
       .innerHTML = this._createHTMLWithNotes();
     }
-  }
+  };
 
   // function changeElement() {
   //   document.getElementById("app")
@@ -30,4 +30,4 @@
 
 })(this);
 
-changeElement();
+insertHTMLNotes();
