@@ -1,11 +1,32 @@
 (function(exports) {
 
-  function changeElement() {
-    document.getElementById("app")
-    .innerHTML = "Howdy";
+  function NoteController() {
+    this._noteList = new NoteList();
   }
 
-  exports.changeElement = changeElement;
+  NoteController.prototype = {
+
+    createNote: function(noteText) {
+      this._noteList.createNote(noteText);
+    },
+
+    _createHTMLWithNotes: function() {
+      var noteListView = new NoteListView(this._noteList);
+      return noteListView.convertNotesToHTML()
+    },
+
+    insertHTMLNotes: function() {
+      document.getElementById("app")
+      .innerHTML = this._createHTMLWithNotes();
+    }
+  }
+
+  // function changeElement() {
+  //   document.getElementById("app")
+  //   .innerHTML = "Howdy";
+  // }
+
+  exports.NoteController = NoteController;
 
 })(this);
 

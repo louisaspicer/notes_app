@@ -1,7 +1,7 @@
 function testNoteListModelIsStored() {
   var noteListModel = ["This is a note"];
   var noteListView = new NoteListView(noteListModel);
-  assert.isTrue(noteListView.noteListModel === noteListModel, "Note list model is instantiated");
+  assert.isTrue(noteListView.noteList === noteListModel, "Note list model is instantiated");
 }
 
 function testConvertsStringToHTML() {
