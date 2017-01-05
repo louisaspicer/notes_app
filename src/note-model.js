@@ -6,7 +6,7 @@ function Note(text, id) {
 }
 
 Note.prototype.returnText = function() {
-  return this._text
+  return this._text;
 };
 
   exports.Note = Note;

@@ -3,7 +3,7 @@
 function NoteList() {
   this._list = [];
   this.idCounter = 0;
-};
+}
 
 NoteList.prototype.returnList = function() {
   return this._list;

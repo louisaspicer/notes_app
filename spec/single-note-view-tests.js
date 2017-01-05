@@ -6,6 +6,7 @@ function singleNoteExists() {
 function convertsToHTML() {
   function NoteDouble(text) {
     this._text = text;
+    this.id = 0;
   }
 
   NoteDouble.prototype = {
@@ -14,11 +15,10 @@ function convertsToHTML() {
     }
   };
 
-
   var noteDouble = new NoteDouble("This is a note");
   var singleNote = new SingleNote(noteDouble);
 
-  assert.isTrue(singleNote.convertToHTML() === "<div>This is a note</div>");
+  assert.isTrue(singleNote.convertToHTML() === "<div id=0>This is a note</div>");
 }
 
 singleNoteExists();

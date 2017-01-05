@@ -5,7 +5,7 @@
 
 SingleNote.prototype = {
   convertToHTML: function() {
-    return "<div>" + this.note.returnText() + "</div>";
+    return "<div id="+this.note.id+">" + this.note.returnText() + "</div>";
   }
 };
  exports.SingleNote = SingleNote;
