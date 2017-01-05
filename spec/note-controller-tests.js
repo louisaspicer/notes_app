@@ -28,6 +28,18 @@ function controllerCanCreateSingleNoteView() {
 
 };
 
+function controllerGetsUrl() {
+  var noteController = new NoteController();
+  function LocationDouble() {
+    this.hash = "#note/0";
+  }
+  var locationDouble = new LocationDouble();
+  console.log(locationDouble.hash.split("/"))
+  var id = noteController.getIdFromUrl(locationDouble);
+  assert.isTrue(id === 0);
+}
+
 controllerExists();
 controllerCanInsertHTML();
 controllerCanCreateSingleNoteView();
+controllerGetsUrl();

@@ -22,5 +22,9 @@
         document.getElementById("app").innerHTML = singleNote.convertToHTML();
   };
 
+  NoteController.prototype.getIdFromUrl = function(location) {
+    return Number(location.hash.split("/")[1]);
+  };
+
   exports.NoteController = NoteController ;
 })(this);
