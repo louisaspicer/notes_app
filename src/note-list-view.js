@@ -10,7 +10,7 @@
     var length = this.noteList._list.length;
     for (var index = 0; index < length; index++) {
       var shortenedString = this.shortenString(this.noteList._list[index]._text);
-      htmlString += "<li><div>" + shortenedString + "</div></li>"
+      htmlString += "<li><a href=#note/"+this.noteList._list[index]._id+"><div>" + shortenedString + "</div></a></li>"
       }
     htmlString += "</ul>"
     return htmlString
