@@ -14,9 +14,12 @@ function noteReturnsText() {
   assert.isTrue(note.returnText() === "Chris can't do Javascript");
 };
 
-
-
+function noteHasId() {
+  var note = new Note("George & Louisa can do Javascript", 0);
+  assert.isTrue(note._id === 0);
+};
 
 noteExists();
 noteTakesAndStoresText();
 noteReturnsText();
+noteHasId();
