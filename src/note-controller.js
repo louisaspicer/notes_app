@@ -17,5 +17,10 @@
     document.getElementById("app").innerHTML = this.HTMLconvert();
   };
 
+  NoteController.prototype.insertSingleNote = function(note) {
+        var singleNote = new SingleNote(note);
+        document.getElementById("app").innerHTML = singleNote.convertToHTML();
+  };
+
   exports.NoteController = NoteController ;
 })(this);
