@@ -3,10 +3,10 @@
   function NoteController() {
     this.noteList = new NoteList();
     this.noteListView = new NoteListView(this.noteList);
-  };
+  }
 
   NoteController.prototype.createNote = function(text) {
-    this.noteList.createNote(text)
+    this.noteList.createNote(text);
   };
 
   NoteController.prototype.HTMLconvert = function() {
@@ -28,8 +28,11 @@
   };
 
   NoteController.prototype.showNoteForCurrentPage = function() {
-    console.log(this);
     this.showSingleNote(this.getIdFromUrl(window.location));
+  };
+
+  NoteController.prototype.makeUrlChangeShowNoteForCurrentPage = function() {
+    window.addEventListener("hashchange", this.showNoteForCurrentPage.bind(this));
   };
 
   exports.NoteController = NoteController;

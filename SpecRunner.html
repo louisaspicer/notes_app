@@ -2,7 +2,8 @@
 
 <html>
 <head>
-    <div id='app'>hello</div>
+  
+  <div id='app'>hello</div>
 
   <script src='spec/assert.js'></script>
   <script src='src/note-model.js'></script>
@@ -15,14 +16,7 @@
   <script src='spec/note-list-tests.js'></script>
   <script src='spec/note-list-view-tests.js'></script>
   <script src='spec/note-controller-tests.js'></script>
-  <script>
-  window.onload = function () {
-  var noteController = new NoteController();
-  window.addEventListener("hashchange", noteController.showNoteForCurrentPage.bind(noteController))
-    noteController.createNote("I'm a note");
-    noteController.insertHTML();
-  }
-  </script>
+
 </head>
 <body>
 </body>
