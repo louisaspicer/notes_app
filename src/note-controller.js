@@ -17,7 +17,8 @@
     document.getElementById("app").innerHTML = this.HTMLconvert();
   };
 
-  NoteController.prototype.insertSingleNote = function(note) {
+  NoteController.prototype.showSingleNote = function(id) {
+        var note = this.noteList._list[id];
         var singleNote = new SingleNote(note);
         document.getElementById("app").innerHTML = singleNote.convertToHTML();
   };
@@ -26,5 +27,10 @@
     return Number(location.hash.split("/")[1]);
   };
 
-  exports.NoteController = NoteController ;
+  NoteController.prototype.showNoteForCurrentPage = function() {
+    console.log(this);
+    this.showSingleNote(this.getIdFromUrl(window.location));
+  };
+
+  exports.NoteController = NoteController;
 })(this);
